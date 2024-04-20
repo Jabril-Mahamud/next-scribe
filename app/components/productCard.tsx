@@ -1,5 +1,5 @@
 import React from 'react'
-import AddtoCart from '../AddToCart'
+import AddtoCart from './AddToCart'
 
 
 
