@@ -41,8 +41,8 @@ import {
     Tooltip,
     TooltipContent,
     TooltipTrigger,
-} from "@/components/ui/tooltip"
-import { TooltipProvider } from "@/components/ui/tooltip";
+    TooltipProvider
+} from "@/components/ui/tooltip";
 
 export default function Dashboard() {
     return (
@@ -186,25 +186,20 @@ export default function Dashboard() {
                                         <legend className="-ml-1 px-1 text-sm font-medium">
                                             Settings
                                         </legend>
-                                        <div className="grid gap-3">
+                                        <div className="grid gap-3 z-100 relative">
                                             <Label htmlFor="model">Model</Label>
                                             <Select>
-                                                <SelectTrigger
-                                                    id="model"
-                                                    className="items-start [&_[data-description]]:hidden"
-                                                >
+                                                <SelectTrigger id="model" className="items-start">
                                                     <SelectValue placeholder="Select a model" />
                                                 </SelectTrigger>
-                                                <SelectContent>
+                                                <SelectContent className="z-10">
                                                     <SelectItem value="genesis">
                                                         <div className="flex items-start gap-3 text-muted-foreground">
                                                             <Rabbit className="size-5" />
                                                             <div className="grid gap-0.5">
                                                                 <p>
                                                                     Neural{" "}
-                                                                    <span className="font-medium text-foreground">
-                                                                        Genesis
-                                                                    </span>
+                                                                    <span className="font-medium text-foreground">Genesis</span>
                                                                 </p>
                                                                 <p className="text-xs" data-description>
                                                                     Our fastest model for general use cases.
@@ -218,9 +213,7 @@ export default function Dashboard() {
                                                             <div className="grid gap-0.5">
                                                                 <p>
                                                                     Neural{" "}
-                                                                    <span className="font-medium text-foreground">
-                                                                        Explorer
-                                                                    </span>
+                                                                    <span className="font-medium text-foreground">Explorer</span>
                                                                 </p>
                                                                 <p className="text-xs" data-description>
                                                                     Performance and speed for efficiency.
@@ -234,13 +227,10 @@ export default function Dashboard() {
                                                             <div className="grid gap-0.5">
                                                                 <p>
                                                                     Neural{" "}
-                                                                    <span className="font-medium text-foreground">
-                                                                        Quantum
-                                                                    </span>
+                                                                    <span className="font-medium text-foreground">Quantum</span>
                                                                 </p>
                                                                 <p className="text-xs" data-description>
-                                                                    The most powerful model for complex
-                                                                    computations.
+                                                                    The most powerful model for complex computations.
                                                                 </p>
                                                             </div>
                                                         </div>
