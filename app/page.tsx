@@ -32,7 +32,7 @@ export default function Home() {
           </div>
           {/* Page content here */}
           <div className="flex-grow flex-col items-center justify-stretch align-bottom">
-            <MessageBox />
+
           </div>
         </div>
         {/* Footer */}
