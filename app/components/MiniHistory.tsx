@@ -18,6 +18,7 @@ interface Sale {
     message: string;
     avatarSrc: string;
     initials: string;
+    numbers: number;
 }
 
 interface Props {
@@ -38,12 +39,13 @@ export default function Component({ salesData }: Props) {
                             <AvatarFallback>{sale.initials}</AvatarFallback>
                         </Avatar>
                         <div>
-                            <p className="text-sm text-muted-foreground">{sale.date}</p>
-                            <p className="text-sm text-muted-foreground">{sale.time}</p>
+                            <b className="text-sm text-muted-foreground">{sale.date}</b>
+                            <b className="text-sm text-muted-foreground">{sale.time}</b>
                         </div>
                         <div className="grid gap-1">
                             <p className="text-sm text-muted-foreground">{sale.message}</p>
                         </div>
+                        <div className="ml-auto font-medium">{sale.numbers}</div>
                     </div>
                 ))}
             </CardContent>
