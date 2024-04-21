@@ -1,5 +1,8 @@
 import type { Config } from "tailwindcss";
 
+const withMT = require("@material-tailwind/react/utils/withMT");
+const colors = require("tailwindcss/colors")
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,9 +16,14 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      colors: {
+        cyan: colors.cyan,
+      }
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [
+    require("daisyui"),
+  ],
   daisyui: {
     themes: ["winter"],
   },
