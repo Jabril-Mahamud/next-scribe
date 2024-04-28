@@ -2,21 +2,21 @@
     {
         "date": "2024-04-22",
         "time": "08:30 AM",
-        "message": "lorem ipsum dolor sit amet",
+        "message": "lorem ipsum dolor sit",
         "avatarSrc": "/avatars/01.png",
         "initials": "OM"
     },
     {
         "date": "2024-04-22",
         "time": "09:45 AM",
-        "message": "lorem ipsum dolor sit amet",
+        "message": "lorem ipsum dolor sit",
         "avatarSrc": "/avatars/02.png",
         "initials": "JD"
     },
     {
         "date": "2024-04-22",
         "time": "11:15 AM",
-        "message": "lorem ipsum dolor sit amet",
+        "message": "lorem ipsum dolor sit",
         "avatarSrc": "/avatars/02.png",
         "initials": "JD"
     }

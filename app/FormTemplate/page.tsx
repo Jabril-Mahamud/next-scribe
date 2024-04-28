@@ -47,6 +47,8 @@ import {
     TooltipTrigger,
     TooltipProvider
 } from "@/components/ui/tooltip";
+import { CardTitle } from "@/components/ui/card"
+import AISelector from "../components/AISelector"
 
 export default function Dashboard() {
     return (
@@ -169,7 +171,7 @@ export default function Dashboard() {
                     </nav>
                 </aside>
                 <div className="flex flex-col">
-                    <header className="top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
+                    <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
                         <h1 className="text-xl font-semibold">Playground</h1>
                         <Drawer>
                             <DrawerTrigger asChild>
@@ -186,7 +188,7 @@ export default function Dashboard() {
                                     </DrawerDescription>
                                 </DrawerHeader>
                                 <form className="grid w-full items-start gap-6 overflow-auto p-4 pt-0">
-                                    <fieldset className="grid gap-6 rounded-lg border p-4">
+                                    <fieldset className="grid gap-6 rounded-lg border p-4" >
                                         <legend className="-ml-1 px-1 text-sm font-medium">
                                             Settings
                                         </legend>
@@ -266,9 +268,8 @@ export default function Dashboard() {
                                                     <SelectValue placeholder="Select a role" />
                                                 </SelectTrigger>
                                                 <SelectContent>
-                                                    <SelectItem value="system">System</SelectItem>
-                                                    <SelectItem value="user">User</SelectItem>
-                                                    <SelectItem value="assistant">Assistant</SelectItem>
+                                                    <SelectItem value="Arthur">Arthur</SelectItem>
+                                                    <SelectItem value="Other people">Other people</SelectItem>
                                                 </SelectContent>
                                             </Select>
                                         </div>
@@ -293,40 +294,34 @@ export default function Dashboard() {
                         <div
                             className="relative hidden flex-col items-start gap-8 md:flex" x-chunk="dashboard-03-chunk-0"
                         >
-                            <form className="grid w-full items-start gap-6">
+                            <form className="grid items-start gap-6 flex-1">
                                 <fieldset className="grid gap-6 rounded-lg border p-4">
+                                    {/* the line 191 border p-4 is the border line that history falls on  */}
                                     <legend className="-ml-1 px-1 text-sm font-medium">
-                                        History
+                                        <CardTitle>History</CardTitle>
                                     </legend>
                                     <div>
                                         <MiniHistory salesData={jsondata} />
                                     </div>
                                 </fieldset>
-                                <fieldset className="grid gap-6 rounded-lg border p-4 bg-white">
-                                    <legend className="-ml-1 px-1 text-sm font-medium bg-white">
+                                <fieldset className="grid gap-6 rounded-lg border p-4">
+                                    <legend className="-ml-1 px-1 text-sm font-medium">
                                         Messages
                                     </legend>
                                     <div className="grid gap-3 bg-white">
                                         <Label htmlFor="role">Role</Label>
-                                        <Select defaultValue="system">
+                                        <Select defaultValue="Arthur">
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Select a role" />
                                             </SelectTrigger>
-                                            <SelectContent className="bg-white">
+                                            <SelectContent>
                                                 <SelectItem value="system">System</SelectItem>
                                                 <SelectItem value="user">User</SelectItem>
                                                 <SelectItem value="assistant">Assistant</SelectItem>
                                             </SelectContent>
                                         </Select>
                                     </div>
-                                    <div className="grid gap-3">
-                                        <Label htmlFor="content">Content</Label>
-                                        <Textarea
-                                            id="content"
-                                            placeholder="You are a..."
-                                            className="min-h-[9.5rem]"
-                                        />
-                                    </div>
+                                    
                                 </fieldset>
                             </form>
                         </div>

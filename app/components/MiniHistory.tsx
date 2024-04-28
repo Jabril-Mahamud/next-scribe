@@ -25,27 +25,26 @@ interface Props {
     salesData: Sale[];
 }
 
-export default function Component({ salesData }: Props) {
+export default function MiniHistory({ salesData }: Props) {
     return (
         <Card>
-            <CardHeader>
-                <CardTitle>Recent Sales</CardTitle>
-            </CardHeader>
-            <CardContent className="grid gap-8">
+            <CardContent className="space-y-4 pt-2 pb-4">
                 {salesData.map((sale, index) => (
-                    <div key={index} className="flex items-center gap-4">
-                        <Avatar className="hidden h-9 w-9 sm:flex">
-                            <AvatarImage src={sale.avatarSrc} alt="Avatar" />
-                            <AvatarFallback>{sale.initials}</AvatarFallback>
-                        </Avatar>
-                        <div>
-                            <b className="text-sm text-muted-foreground">{sale.date}</b>
-                            <b className="text-sm text-muted-foreground">{sale.time}</b>
+                    <div key={index} className="border rounded-lg p-4">
+                        <div className="flex items-center gap-4">
+                            <Avatar className="h-9 w-9 sm:hidden">
+                                <AvatarImage src={sale.avatarSrc} alt="Avatar" />
+                                <AvatarFallback>{sale.initials}</AvatarFallback>
+                            </Avatar>
+                            <div>
+                                <b className="text-sm text-muted-foreground">{sale.date}</b>
+                                <b className="text-sm text-muted-foreground">{sale.time}</b>
+                            </div>
+                            <div className="grid gap-1">
+                                <p className="text-sm text-muted-foreground">{sale.message}</p>
+                            </div>
+                            <div className="ml-auto font-medium">{sale.numbers}</div>
                         </div>
-                        <div className="grid gap-1">
-                            <p className="text-sm text-muted-foreground">{sale.message}</p>
-                        </div>
-                        <div className="ml-auto font-medium">{sale.numbers}</div>
                     </div>
                 ))}
             </CardContent>
