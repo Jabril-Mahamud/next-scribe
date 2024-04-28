@@ -169,7 +169,7 @@ export default function Dashboard() {
                     </nav>
                 </aside>
                 <div className="flex flex-col">
-                    <header className="sticky top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
+                    <header className="top-0 z-10 flex h-[57px] items-center gap-1 border-b bg-background px-4">
                         <h1 className="text-xl font-semibold">Playground</h1>
                         <Drawer>
                             <DrawerTrigger asChild>
@@ -255,11 +255,11 @@ export default function Dashboard() {
                                             <Input id="top-k" type="number" placeholder="0.0" />
                                         </div>
                                     </fieldset>
-                                    <fieldset className="grid gap-6 rounded-lg border p-4">
+                                    <fieldset className="grid gap-6 rounded-lg border p-4 bg-white">
                                         <legend className="-ml-1 px-1 text-sm font-medium">
                                             Messages
                                         </legend>
-                                        <div className="grid gap-3">
+                                        <div className="grid gap-3 bg-white">
                                             <Label htmlFor="role">Role</Label>
                                             <Select defaultValue="system">
                                                 <SelectTrigger>
@@ -272,7 +272,7 @@ export default function Dashboard() {
                                                 </SelectContent>
                                             </Select>
                                         </div>
-                                        <div className="grid gap-3">
+                                        <div className="grid gap-3 bg-white">
                                             <Label htmlFor="content">Content</Label>
                                             <Textarea id="content" placeholder="You are a..." />
                                         </div>
@@ -302,17 +302,17 @@ export default function Dashboard() {
                                         <MiniHistory salesData={jsondata} />
                                     </div>
                                 </fieldset>
-                                <fieldset className="grid gap-6 rounded-lg border p-4">
-                                    <legend className="-ml-1 px-1 text-sm font-medium">
+                                <fieldset className="grid gap-6 rounded-lg border p-4 bg-white">
+                                    <legend className="-ml-1 px-1 text-sm font-medium bg-white">
                                         Messages
                                     </legend>
-                                    <div className="grid gap-3">
+                                    <div className="grid gap-3 bg-white">
                                         <Label htmlFor="role">Role</Label>
                                         <Select defaultValue="system">
                                             <SelectTrigger>
                                                 <SelectValue placeholder="Select a role" />
                                             </SelectTrigger>
-                                            <SelectContent>
+                                            <SelectContent className="bg-white">
                                                 <SelectItem value="system">System</SelectItem>
                                                 <SelectItem value="user">User</SelectItem>
                                                 <SelectItem value="assistant">Assistant</SelectItem>

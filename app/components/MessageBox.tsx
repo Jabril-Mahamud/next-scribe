@@ -1,3 +1,4 @@
+/*
 import React from 'react';
 import {
     Avatar,
@@ -50,3 +51,4 @@ export default function Component({ salesData }: Props) {
         </Card>
     );
 }
+*/
